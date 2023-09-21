@@ -10,12 +10,12 @@ type Props = {
 }
 
 export const CheckBox: React.FC<Props> = ({onToggleCheck, text, checked}: Props) => {
-    return <div className={'checkbox-wrapper'} onClick={onToggleCheck}>
-        <input type={'checkbox'} checked={checked}/>
+    return <label className={'checkbox-wrapper'}>
+        <input type={'checkbox'} checked={checked} onChange={onToggleCheck}/>
         <img className={'checkbox-wrapper__checkbox-img'}
              src={checked ? CheckedIcon : UncheckedIcon}
              alt={'checkbox-icon'}
         />
         {text}
-    </div>
+    </label>
 }

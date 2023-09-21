@@ -6,7 +6,7 @@ import ArrowDownIcon from '../../assets/icons/arrow-down-icon.svg';
 type Props = {
     header: ReactNode;
     content: ReactNode;
-    expanded: boolean;
+    expanded: boolean | undefined;
     onAccordionToggle: () => void;
 }
 
