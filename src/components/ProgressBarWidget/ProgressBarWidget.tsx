@@ -3,6 +3,7 @@ import './ProgressBarWidget.scss';
 import {ProgressBar} from "../ProgressBar/ProgressBar";
 import {Accordion} from "../Accordion/Accordion";
 import BookingFeaturesNotAllCheckedIcon from '../../assets/icons/booking-features-not-all-checked-icon.svg';
+import {CheckBox} from "../CheckBox/CheckBox";
 
 type Props = {
     title: string;
@@ -10,7 +11,10 @@ type Props = {
 
 export const ProgressBarWidget: React.FC<Props> = ({title}: Props) => {
 
-    const onAccordionToggle = () => {}
+    const onAccordionToggle = () => {
+    }
+    const onCheckBoxToggle = () => {
+    }
 
     return <div className={'progress-bar-widget-wrapper'}>
         <div className={'progress-bar-widget-wrapper__header'}>
@@ -26,8 +30,14 @@ export const ProgressBarWidget: React.FC<Props> = ({title}: Props) => {
                         <span>title</span>
                     </div>
                 }
-                content={<>content</>}
-                expanded={false}
+                content={
+                    <CheckBox
+                        onToggleCheck={onCheckBoxToggle}
+                        text={'task1'}
+                        checked={false}
+                    />
+                }
+                expanded={true}
                 onAccordionToggle={onAccordionToggle}/>
         </div>
     </div>

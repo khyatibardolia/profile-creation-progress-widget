@@ -1,1 +1,18 @@
-.checkbox-wrapper {}
+.checkbox-wrapper {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  
+  input {
+    /*hide checkbox default style*/
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+
+  &__checkbox-img {
+    padding-right: 16px;
+  }
+}
