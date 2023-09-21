@@ -1,0 +1,24 @@
+@use "../assets/styles/_variables.scss" as *;
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  background-color: $color-container-bg;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__tasks-card {
+    width: 90%;
+    border: 1px solid $color-card-border;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: $color-progress-widget-bg;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
