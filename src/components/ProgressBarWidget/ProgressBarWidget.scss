@@ -1,1 +1,15 @@
-.progress-bar-widget-wrapper {}
+@use "../../assets/styles/_variables.scss" as *;
+
+.progress-bar-widget-wrapper {
+  &__header {
+    padding: 32px 24px;
+    &__title {
+      font-size: 22px;
+      font-weight: 700;
+    }
+  }
+
+  &__content {
+
+  }
+}
