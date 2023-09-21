@@ -12,4 +12,13 @@
   &__content {
 
   }
+
+  &__accordion-header {
+    display: flex;
+    align-items: center;
+
+    img {
+      padding-right: 16px;
+    }
+  }
 }

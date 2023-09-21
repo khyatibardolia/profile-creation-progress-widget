@@ -1,3 +1,40 @@
-.accordion-wrapper {
+@use "../../assets/styles/_variables.scss" as *;
 
+.accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid $color-accordion-border;
+
+  &:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 8px 8px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-self: stretch;
+    color: $color-accordion-title-text;
+
+    &__expand {
+      display: flex;
+      align-items: center;
+
+      span {
+        padding-right: 8px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        color: $color-accordion-expand-text;
+      }
+    }
+  }
+
+  &__content {
+    padding: 16px;
+  }
 }
