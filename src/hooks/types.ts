@@ -1,4 +1,4 @@
-import {GroupTasks} from "../components/TasksProgressWidget/types";
+import {GroupTasks} from "../components/UserProfileCreationProgressWidget/types";
 
 export interface InitialState {
     isLoading: boolean,

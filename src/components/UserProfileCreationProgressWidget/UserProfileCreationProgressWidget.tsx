@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import './TasksProgressWidget.scss';
+import './UserProfileCreationProgressWidget.scss';
 import {ProgressBar} from "../ProgressBar/ProgressBar";
 import {Accordion} from "../Accordion/Accordion";
 import BookingFeaturesNotAllCheckedIcon from '../../assets/icons/booking-features-not-all-checked-icon.svg';
@@ -13,7 +13,7 @@ type Props = {
     groupTasks: GroupTasks[];
 }
 
-export const TasksProgressWidget: React.FC<Props> = ({title, groupTasks}: Props) => {
+export const UserProfileCreationProgressWidget: React.FC<Props> = ({title, groupTasks}: Props) => {
 
     const [groupTasksData, setGroupTasksData] = useState<GroupTasks[]>([]);
     const progressPercentage = calculateTasksProgress(groupTasksData);
@@ -41,13 +41,15 @@ export const TasksProgressWidget: React.FC<Props> = ({title, groupTasks}: Props)
         setGroupTasksData(updatedGroupTasks);
     }
 
-    return <div className={'progress-bar-widget-wrapper'}>
-        <div className={'progress-bar-widget-wrapper__header'}>
-            <span className={'progress-bar-widget-wrapper__header__title'}>{title}</span>
+    return <div className={'user-profile-creation-progress-widget-wrapper'}>
+        <div className={'user-profile-creation-progress-widget-wrapper__header'}>
+            <span className={'user-profile-creation-progress-widget-wrapper__header__title'}>
+                {title}
+            </span>
             <ProgressBar progressPercentage={progressPercentage}/>
         </div>
 
-        <div className={'progress-bar-widget-wrapper__content'}>
+        <div className={'user-profile-creation-progress-widget-wrapper__content'}>
             {groupTasksData.length && groupTasksData.map((groups: GroupTasks, groupIndex: number) => {
                 const isAllGroupTasksChecked = checkIfAllGroupTasksAreChecked(groups);
 
@@ -56,11 +58,11 @@ export const TasksProgressWidget: React.FC<Props> = ({title, groupTasks}: Props)
                     expanded={groups.expanded}
                     onAccordionToggle={() => onAccordionToggle(groupIndex)}
                     header={
-                        <div className={'progress-bar-widget-wrapper__accordion-header'}>
+                        <div className={'user-profile-creation-progress-widget-wrapper__accordion-header'}>
                             <img src={isAllGroupTasksChecked ? BookingFeaturesAllCheckedIcon :
                                 BookingFeaturesNotAllCheckedIcon} alt={'clip-icon'}/>
                             <span className={isAllGroupTasksChecked ?
-                                'progress-bar-widget-wrapper__accordion-header--green' : ''}>
+                                'user-profile-creation-progress-widget-wrapper__accordion-header--green' : ''}>
                                 {groups.name}
                             </span>
                         </div>

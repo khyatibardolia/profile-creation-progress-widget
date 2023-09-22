@@ -1,4 +1,4 @@
-import {GroupTasks, Tasks} from "../components/TasksProgressWidget/types";
+import {GroupTasks, Tasks} from "../components/UserProfileCreationProgressWidget/types";
 
 export const calculateTasksProgress = (groupTasks: GroupTasks[]): number => {
     if (!groupTasks.length) {
