@@ -8,7 +8,7 @@ import {CheckBox} from "../CheckBox/CheckBox";
 import {GroupTasks, Tasks} from "./types";
 import {checkIfAllGroupTasksAreChecked, calculateTasksProgress} from "../../utils/groupTasks";
 
-type Props = {
+export type Props = {
     title: string;
     groupTasks: GroupTasks[];
 }

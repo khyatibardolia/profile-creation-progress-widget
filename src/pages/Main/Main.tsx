@@ -1,8 +1,7 @@
 import React from "react";
 import './Main.scss';
-import {UserProfileCreationProgressWidget} from "../components/UserProfileCreationProgressWidget/UserProfileCreationProgressWidget";
-import {useFetchGroupTasksData} from "../hooks/useFetchGroupTasksData";
-import {GroupTasks} from "../components/UserProfileCreationProgressWidget/types";
+import {UserProfileCreationProgressWidget} from "../../components/UserProfileCreationProgressWidget/UserProfileCreationProgressWidget";
+import {useFetchGroupTasksData} from "../../hooks/useFetchGroupTasksData";
 
 export const Main: React.FC = () => {
     const {groupTasks, isLoading, hasError} = useFetchGroupTasksData();
@@ -20,7 +19,7 @@ export const Main: React.FC = () => {
                 <div className={'main-container__tasks-card__content'}>
                     <UserProfileCreationProgressWidget
                         title={'Lodgify Grouped Tasks'}
-                        groupTasks={groupTasks as GroupTasks[]}
+                        groupTasks={groupTasks}
                     />
                 </div>
             </div>

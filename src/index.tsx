@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import { Main } from './pages/Main';
+import { Main } from './pages/Main/Main';
 import 'normalize.css';
 import reportWebVitals from './reportWebVitals';
 

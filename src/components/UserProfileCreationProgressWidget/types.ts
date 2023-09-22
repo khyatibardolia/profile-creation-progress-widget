@@ -6,6 +6,6 @@ export interface GroupTasks {
 
 export interface Tasks {
     description: string;
-    value: string;
+    value: number;
     checked: boolean;
 }

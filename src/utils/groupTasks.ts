@@ -10,9 +10,9 @@ export const calculateTasksProgress = (groupTasks: GroupTasks[]): number => {
     groupTasks.forEach((group: GroupTasks) => {
         group.tasks.forEach((task: Tasks) => {
             if (task.checked) {
-                checkedTaskValue += parseInt(task.value);
+                checkedTaskValue += task.value;
             }
-            totalTasksValue += parseInt(task.value);
+            totalTasksValue += task.value;
         });
     });
 
