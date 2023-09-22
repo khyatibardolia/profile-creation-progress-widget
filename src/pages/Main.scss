@@ -6,6 +6,10 @@
   align-items: center;
   padding: 70px 45px;
 
+  &__error-text {
+    color: $color-error-text;
+  }
+
   &__tasks-card {
     width: 100%;
     height: 100%;

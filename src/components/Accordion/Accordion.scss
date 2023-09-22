@@ -20,6 +20,9 @@
     align-self: stretch;
     color: $color-accordion-title-text;
     padding: 24px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
 
     &__expand {
       display: flex;

@@ -9,13 +9,13 @@
     }
   }
 
-  &__content {
-
-  }
-
   &__accordion-header {
     display: flex;
     align-items: center;
+
+    &--green {
+      color: $color-progress-percent;
+    }
 
     img {
       padding-right: 16px;

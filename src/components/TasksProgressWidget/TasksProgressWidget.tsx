@@ -3,8 +3,10 @@ import './TasksProgressWidget.scss';
 import {ProgressBar} from "../ProgressBar/ProgressBar";
 import {Accordion} from "../Accordion/Accordion";
 import BookingFeaturesNotAllCheckedIcon from '../../assets/icons/booking-features-not-all-checked-icon.svg';
+import BookingFeaturesAllCheckedIcon from '../../assets/icons/booking-features-all-checked-icon.svg';
 import {CheckBox} from "../CheckBox/CheckBox";
 import {GroupTasks, Tasks} from "./types";
+import {checkIfAllGroupTasksAreChecked, calculateTasksProgress} from "../../utils/groupTasks";
 
 type Props = {
     title: string;
@@ -13,7 +15,8 @@ type Props = {
 
 export const TasksProgressWidget: React.FC<Props> = ({title, groupTasks}: Props) => {
 
-    const [groupTasksData, setGroupTasksData] = useState<GroupTasks[]>(groupTasks);
+    const [groupTasksData, setGroupTasksData] = useState<GroupTasks[]>([]);
+    const progressPercentage = calculateTasksProgress(groupTasksData);
 
     useEffect(() => {
         // set expanded property to each task group in order to toggle it
@@ -41,19 +44,25 @@ export const TasksProgressWidget: React.FC<Props> = ({title, groupTasks}: Props)
     return <div className={'progress-bar-widget-wrapper'}>
         <div className={'progress-bar-widget-wrapper__header'}>
             <span className={'progress-bar-widget-wrapper__header__title'}>{title}</span>
-            <ProgressBar progressPercentage={"40"}/>
+            <ProgressBar progressPercentage={progressPercentage}/>
         </div>
 
         <div className={'progress-bar-widget-wrapper__content'}>
-            {groupTasksData.length && groupTasksData.map((groups: GroupTasks, groupIndex: number) =>
-                <Accordion
+            {groupTasksData.length && groupTasksData.map((groups: GroupTasks, groupIndex: number) => {
+                const isAllGroupTasksChecked = checkIfAllGroupTasksAreChecked(groups);
+
+                return <Accordion
                     key={groupIndex}
                     expanded={groups.expanded}
                     onAccordionToggle={() => onAccordionToggle(groupIndex)}
                     header={
                         <div className={'progress-bar-widget-wrapper__accordion-header'}>
-                            <img src={BookingFeaturesNotAllCheckedIcon} alt={'clip-icon'}/>
-                            <span>{groups.name}</span>
+                            <img src={isAllGroupTasksChecked ? BookingFeaturesAllCheckedIcon :
+                                BookingFeaturesNotAllCheckedIcon} alt={'clip-icon'}/>
+                            <span className={isAllGroupTasksChecked ?
+                                'progress-bar-widget-wrapper__accordion-header--green' : ''}>
+                                {groups.name}
+                            </span>
                         </div>
                     }
                     content={
@@ -65,7 +74,9 @@ export const TasksProgressWidget: React.FC<Props> = ({title, groupTasks}: Props)
                                 checked={task.checked}
                             />)
                     }
-                />)}
+                />
+            })
+            }
         </div>
     </div>
 }
