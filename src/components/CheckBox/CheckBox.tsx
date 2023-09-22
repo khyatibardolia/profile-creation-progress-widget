@@ -3,7 +3,7 @@ import './CheckBox.scss';
 import CheckedIcon from '../../assets/icons/checkbox-checked-icon.svg';
 import UncheckedIcon from '../../assets/icons/checkbox-unchecked-icon.svg';
 
-type Props = {
+export type Props = {
     onToggleCheck: () => void;
     text: string;
     checked: boolean;

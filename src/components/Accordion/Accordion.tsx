@@ -3,7 +3,7 @@ import './Accordion.scss';
 import ArrowUpIcon from '../../assets/icons/arrow-up-icon.svg';
 import ArrowDownIcon from '../../assets/icons/arrow-down-icon.svg';
 
-type Props = {
+export type Props = {
     header: ReactNode;
     content: ReactNode;
     expanded: boolean | undefined;
