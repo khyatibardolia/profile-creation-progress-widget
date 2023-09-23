@@ -55,16 +55,32 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Approach
 In developing the Profile Creation Progress Widget, the structure involves the following:
 
-- Designing the component hierarchy, including `Accordion, Checkbox, and ProgressBar` reusable components.
-- Implementing data fetching using a `custom hook` (useFetchGroupTasksData) to fetch and manage profile creation task data.
-- Creating the `UserProfileCreationProgressWidget` component, which uses the reusable components and `utility functions` to calculate and handle the logic of the working app. This component manages the state of task groups, allows users to expand/collapse groups, mark tasks as complete, and calculates the overall progress.
-- Styling the components with `SASS` to match the provided figma design.
-- Adding `TypeScript` for type safety.
-- Writing `unit tests` for each component to ensure correctness.
+### Component Hierarchy
+- Created a component hierarchy that includes `Accordion`, `Checkbox`, and `ProgressBar` as `reusable` components.
+- The `UserProfileCreationProgressWidget` component, which serves as the main component for the application.
+  - This component utilizes the reusable components mentioned earlier and includes utility functions to calculate and manage the app's logic.
+  - It manages the state of task groups, allows users to expand/collapse groups, mark tasks as complete, and calculates the overall progress.
+- This modular structure allows for `easy maintenance` and future scalability.
 
-## Commit Convention
-To ensure readability and consistency in `commit messages`, the conventional commit format is used for writing commit messages that are `clear, concise, and informative`. 
-Each commit message should adhere to the following pattern:
+### Data Fetching
+- Implemented data fetching using a `custom hook` called `useFetchGroupTasksData`. This hook is responsible for fetching and managing profile creation task data from an external source.
+
+### Styling
+- For styling, used the `BEM (Block Element Modifier)` methodology, ensuring clear and maintainable class names. For more information see this [documentation](https://en.bem.info/methodology/quick-start/#introduction)
+- Utilized `SCSS modules` for styling, which provide a modular and organized way to manage styles for each component separately.
+- Created a `mixin` for fonts to maintain consistency in `typography` across the application.
+
+### TypeScript
+- TypeScript is integrated into the project to provide `type safety` and enhance code quality.
+- This ensures that the code is robust and less prone to `runtime errors`.
+
+### Testing
+- Wrote `unit tests` for each component to ensure their `correctness` and `reliability`.
+- These tests are part of `continuous integration` process to catch issues early in development.
+
+### Commit Convention
+- To ensure readability and consistency in `commit messages`, the conventional commit format is used for writing commit messages that are `clear, concise, and informative`. 
+- Each commit message should adhere to the following pattern:
 
 ```
 <type>(<scope>): <description>
