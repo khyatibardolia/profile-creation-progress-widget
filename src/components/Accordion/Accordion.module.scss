@@ -1,4 +1,5 @@
 @use "../../assets/styles/_variables.scss" as *;
+@use "../../assets/styles/_mixins.scss" as *;
 
 .wrapper {
   display: flex;
@@ -20,9 +21,7 @@
     align-self: stretch;
     color: $color-accordion-title-text;
     padding: 24px;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
+    @include fontRegular(18);
 
     &__expand {
       display: flex;
@@ -30,9 +29,7 @@
 
       span {
         padding-right: 8px;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
+        @include fontRegular(16);
         color: $color-accordion-expand-text;
       }
     }

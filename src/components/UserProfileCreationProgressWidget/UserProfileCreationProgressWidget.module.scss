@@ -1,11 +1,11 @@
 @use "../../assets/styles/_variables.scss" as *;
+@use "../../assets/styles/_mixins.scss" as *;
 
 .wrapper {
   &__header {
     padding: 32px 24px;
     &__title {
-      font-size: 22px;
-      font-weight: 700;
+      @include fontBold(22);
     }
   }
 

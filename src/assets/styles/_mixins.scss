@@ -1,0 +1,14 @@
+@mixin fontBold($size) {
+  font-size: #{$size}px;
+  font-weight: bold;
+}
+
+@mixin fontRegular($size) {
+  font-size: #{$size}px;
+  font-weight: normal;
+}
+
+@mixin fontSemiBold($size) {
+  font-size: #{$size}px;
+  font-weight: 600;
+}

@@ -1,4 +1,5 @@
 @use "../../assets/styles/_variables.scss" as *;
+@use "../../assets/styles/_mixins.scss" as *;
 
 .wrapper {
   &__section {
@@ -17,8 +18,6 @@
       background-color: $color-progress-percent;
       border-radius: 24px;
       color: $color-progress-text;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 600;
+      @include fontSemiBold(16);
   }
 }
