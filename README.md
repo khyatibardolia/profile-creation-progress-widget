@@ -53,10 +53,11 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Approach
-In developing the Profile Creation Progress Widget, the following structured involves:
+In developing the Profile Creation Progress Widget, the structure involves the following:
 
 - Designing the component hierarchy, including `Accordion, Checkbox, and ProgressBar` reusable components.
 - Implementing data fetching using a `custom hook` (useFetchGroupTasksData) to fetch and manage profile creation task data.
+- Creating the `UserProfileCreationProgressWidget` component, which uses the reusable components and `utility functions` to calculate and handle the logic of the working app. This component manages the state of task groups, allows users to expand/collapse groups, mark tasks as complete, and calculates the overall progress.
 - Styling the components with `SASS` to match the provided figma design.
 - Adding `TypeScript` for type safety.
 - Writing `unit tests` for each component to ensure correctness.
@@ -84,3 +85,8 @@ Where:
 
 This convention helps in tracking and understanding the `purpose` of each commit.
 See the section about [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification) for more information.
+
+## Live Demo
+
+The application is deployed on Netlify and can be accessed here:
+https://lodgify-fe-technical-challenge.netlify.app/
