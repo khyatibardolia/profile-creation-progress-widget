@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import './UserProfileCreationProgressWidget.scss';
+import styles from './UserProfileCreationProgressWidget.module.scss';
 import {ProgressBar} from "../ProgressBar/ProgressBar";
 import {Accordion} from "../Accordion/Accordion";
 import BookingFeaturesNotAllCheckedIcon from '../../assets/icons/booking-features-not-all-checked-icon.svg';
@@ -41,15 +41,15 @@ export const UserProfileCreationProgressWidget: React.FC<Props> = ({title, group
         setGroupTasksData(updatedGroupTasks);
     }
 
-    return <div className={'user-profile-creation-progress-widget-wrapper'}>
-        <div className={'user-profile-creation-progress-widget-wrapper__header'}>
-            <span className={'user-profile-creation-progress-widget-wrapper__header__title'}>
+    return <div className={styles['wrapper']}>
+        <div className={styles['wrapper__header']}>
+            <span className={styles['wrapper__header__title']}>
                 {title}
             </span>
             <ProgressBar progressPercentage={progressPercentage}/>
         </div>
 
-        <div className={'user-profile-creation-progress-widget-wrapper__content'}>
+        <div className={styles['wrapper__content']}>
             {groupTasksData.length && groupTasksData.map((groups: GroupTasks, groupIndex: number) => {
                 const isAllGroupTasksChecked = checkIfAllGroupTasksAreChecked(groups);
 
@@ -58,11 +58,11 @@ export const UserProfileCreationProgressWidget: React.FC<Props> = ({title, group
                     expanded={groups.expanded}
                     onAccordionToggle={() => onAccordionToggle(groupIndex)}
                     header={
-                        <div className={'user-profile-creation-progress-widget-wrapper__accordion-header'}>
+                        <div className={styles['wrapper__accordion-header']}>
                             <img src={isAllGroupTasksChecked ? BookingFeaturesAllCheckedIcon :
                                 BookingFeaturesNotAllCheckedIcon} alt={'clip-icon'}/>
                             <span className={isAllGroupTasksChecked ?
-                                'user-profile-creation-progress-widget-wrapper__accordion-header--green' : ''}>
+                                `${styles['wrapper__accordion-header--green']}` : ''}>
                                 {groups.name}
                             </span>
                         </div>

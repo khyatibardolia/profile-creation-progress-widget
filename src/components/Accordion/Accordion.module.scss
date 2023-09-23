@@ -1,6 +1,6 @@
 @use "../../assets/styles/_variables.scss" as *;
 
-.accordion-wrapper {
+.wrapper {
   display: flex;
   flex-direction: column;
   border: 1px solid $color-accordion-border;
