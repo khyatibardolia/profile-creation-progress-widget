@@ -26,11 +26,12 @@ export const UserProfileCreationProgressWidget: React.FC<Props> = ({title, group
     }, [groupTasks]);
 
     const onAccordionToggle = (groupIndex: number) => {
-        // create shallow copy of the state
-        const updatedGroups = [...groupTasksData] as GroupTasks[];
-        // Toggle the 'expanded' property of the group at the specified index
-        updatedGroups[groupIndex].expanded = !updatedGroups[groupIndex].expanded;
-        setGroupTasksData(updatedGroups);
+        // match the index and only open one accordion at a time
+        setGroupTasksData((prevGroupTasksData: GroupTasks[]) =>
+            prevGroupTasksData.map((group: GroupTasks, index: number) => (
+                 {...group, expanded: index === groupIndex ? !group.expanded : false}
+            ))
+        )
     }
 
     const onCheckBoxToggle = (groupIndex: number, taskIndex: number) => {
