@@ -105,4 +105,4 @@ See the section about [conventional commits](https://www.conventionalcommits.org
 ## Live Demo
 
 The application is deployed on Netlify and can be accessed here:
-https://lodgify-fe-technical-challenge.netlify.app/
+https://profile-creation-progress-widget.netlify.app/
