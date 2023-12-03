@@ -5,15 +5,14 @@ export type Props = {
     progressPercentage: number;
 }
 
-export const ProgressBar: React.FC<Props> = ({progressPercentage}: Props) => {
+export const ProgressBar: React.FC<Props> = React.memo(({progressPercentage}: Props) => {
     return <div className={styles['wrapper']}>
         <div className={styles['wrapper__section']}>
-            {progressPercentage > 0 &&
                 <div data-testid="progress-percentage"
-                     className={styles['wrapper__percentage']}
-                     style={{width: `${progressPercentage}%`}}>
+                     className={`${styles['wrapper__percentage']} ${styles['progress-percentage__zero']}`}
+                     style={{width: progressPercentage > 5 ? `${progressPercentage}%` : '30px'}}>
                     {progressPercentage}%
-                </div>}
+                </div>
         </div>
     </div>
-}
+})

@@ -18,7 +18,7 @@ export const Main: React.FC = () => {
             <div className={styles['container__tasks-card']}>
                 <div className={styles['container__tasks-card__content']}>
                     <UserProfileCreationProgressWidget
-                        title={'Lodgify Grouped Tasks'}
+                        title={'Profile Creation Progress'}
                         groupTasks={groupTasks}
                     />
                 </div>
