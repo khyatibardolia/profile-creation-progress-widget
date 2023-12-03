@@ -3,7 +3,7 @@
 The Profile Creation Progress Widget is a React-based component designed to display and manage the progress of profile creation tasks.
 It provides an `intuitive interface` for managing tasks within different areas, marking them as complete, and visualizing the overall progress.
 
-![img.png](img.png)
+![img_1.png](img_1.png)
 
 # Features
 - Displays the progress of profile creation.
